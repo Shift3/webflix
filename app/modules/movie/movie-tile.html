@@ -1,7 +1,7 @@
 <div class="movie-tile"
-     ng-click="moviesCtl.selectedMovie = movie">
-    <div class="">{{ movie.title }}</div>
+     ng-class="{active: movietile.selectedMovie.id === movietile.movie.id}">
+    <div class="">{{ movietile.movie.title }}</div>
     <span class="movie-info">
-        {{ movie.vote_average }} || {{ movie.release_date | niceDate}}
+        {{ movietile.movie.vote_average }} || {{ movietile.movie.release_date | niceDate}}
     </span>
 </div>

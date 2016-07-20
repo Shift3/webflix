@@ -3,6 +3,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
+    "gulp-iife": "^0.3.0",
     "gulp-jshint": "^2.0.1",
     "gulp-less": "^3.1.0",
     "gulp-livereload": "^3.8.1",
@@ -13,5 +14,8 @@
     "gulp-uglify": "^1.5.4",
     "gulp-watch": "^4.3.8",
     "jshint": "^2.9.2"
+  },
+  "devDependencies": {
+    "gulp-angular-htmlify": "^2.3.0"
   }
 }

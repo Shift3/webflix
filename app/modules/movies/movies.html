@@ -12,13 +12,9 @@
 </section>
 <section class="rnd-corners-med"
          id="Narrative_Content">
-    <!--<ul>-->
-    <!--<li data-ng-repeat="movie in moviesCtl.movies">-->
-
-    <!--<a href="#" data-ng-click="moviesCtl.selectMovie(movie)">{{ movie.title }}</a>-->
-
-    <!--</li>-->
-    <!--</ul>-->
-    <movie-tile data-ng-repeat="movie in moviesCtl.movies" data-ng-click="moviesCtl.selectMovie(movie)"></movie-tile>
+    <movie-tile ng-repeat="movie in moviesCtl.movies"
+                data-movie="movie"
+                data-selected-movie="moviesCtl.selectedMovie"
+                ng-click="moviesCtl.selectMovie(movie)"></movie-tile>
 </section>
 <div class="clearFix"></div>

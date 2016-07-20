@@ -55,3 +55,7 @@
 .movie-tile:hover {
     background-color: #EBFFBC;
 }
+
+.movie-tile.active {
+    background-color: #EBFFBC;
+}

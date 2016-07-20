@@ -10,6 +10,16 @@
 
     vm.movies = allMovies;
     vm.selectedMovie = allMovies[0];
+    vm.selectMovie = selectMovie;
+
+    /**
+     * Select a movie.
+     * 
+     * @param movie
+     */
+    function selectMovie(movie) {
+      vm.selectedMovie = movie; 
+    }
   }
 
 }());
