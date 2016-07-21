@@ -14,29 +14,29 @@
 
     /**
      * Select a movie.
-     * 
+     *
      * @param movie
      */
     function selectMovie(movie) {
-      vm.selectedMovie = movie; 
+      vm.selectedMovie = movie;
     }
 
     /**
      * Get the next index by moving left or right a specified number of indexes.
-     * 
+     *
      * @param direction
      * @returns {*}
      */
     function getIndex(direction) {
       var idx = _.indexOf(vm.movies, vm.selectedMovie),
         next = idx + direction;
-      
+
       return next;
     }
 
     /**
      * Move up or down based on some condition.
-     * 
+     *
      * @param direction
      * @param dontMoveIf
      */
@@ -47,16 +47,20 @@
         selectMovie(vm.movies[next]);
       });
     }
-    
+
     /**
      * Move us down in the list of movies.
      */
     Mousetrap.bind('j', function () {
-      move(1, function(next) {return next > vm.movies.length - 1;});
+      move(1, function (next) {
+        return next > vm.movies.length - 1;
+      });
     });
-    
+
     Mousetrap.bind('k', function () {
-      move(-1, function(next) {return next < 0;});
+      move(-1, function (next) {
+        return next < 0;
+      });
     });
   }
 
