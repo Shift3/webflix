@@ -1,4 +1,4 @@
-angular.module('gittyup.services')
+angular.module('webflixApp')
   .provider('storage', function () {
     var vm = this,
       prefix = '',
