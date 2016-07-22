@@ -2,8 +2,19 @@ angular.module('webflixApp')
   .directive('ratings', ratings);
 
 function ratings() {
-  function controller() {
+  function controller($window) {
+    this.rateMovie = rateMovie;
     
+    /**
+     * Rate a given movie with a given rating.
+     *
+     * @param movie
+     * @param rating
+     */
+    function rateMovie(movie, rating) {
+      movie.webflixRating = rating;
+      $window.localStorage.setItem(movie.id, rating);
+    }
   }
   
   //Directive Definition Object or DDO

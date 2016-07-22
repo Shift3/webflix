@@ -1,17 +1,22 @@
 <ul class="ratings">
     <li><i class="fa"
+           ng-click="ratings.rateMovie(ratings.movie, 1)"
            ng-class="{'fa-star': ratings.movie.webflixRating >= 1, 'fa-star-o': ratings.movie.webflixRating < 1}"></i>
     </li>
     <li><i class="fa"
+           ng-click="ratings.rateMovie(ratings.movie, 2)"
            ng-class="{'fa-star': ratings.movie.webflixRating >= 2, 'fa-star-o': ratings.movie.webflixRating < 2}"></i>
     </li>
     <li><i class="fa"
+           ng-click="ratings.rateMovie(ratings.movie, 3)"
            ng-class="{'fa-star': ratings.movie.webflixRating >= 3, 'fa-star-o': ratings.movie.webflixRating < 3}"></i>
     </li>
     <li><i class="fa"
+           ng-click="ratings.rateMovie(ratings.movie, 4)"
            ng-class="{'fa-star': ratings.movie.webflixRating >= 4, 'fa-star-o': ratings.movie.webflixRating < 4}"></i>
     </li>
     <li><i class="fa"
+           ng-click="ratings.rateMovie(ratings.movie, 5)"
            ng-class="{'fa-star': ratings.movie.webflixRating == 5, 'fa-star-o': ratings.movie.webflixRating < 5}"></i>
     </li>
 </ul>

@@ -21,6 +21,6 @@
       },
       templateUrl: 'build/partials/movie/movie-tile.html'
     };
-  };
+  }
 }());
 

@@ -3,7 +3,7 @@
   'use strict';
 
   angular.module('webflixApp')
-    .factory('Movie', function () {
+    .factory('Movie', function ($window, $cookie) {
       function Movie(data) {
         _.merge(this, {
           title: '',
@@ -13,8 +13,9 @@
           poster_path: '',
           vote_average: '',
           checkedIn: true,
-          webflixRating: 3
         }, data || {});
+        
+        this.webflixRating = $window.localStorage.getItem(this.id);
       }
 
       Movie.prototype = {
