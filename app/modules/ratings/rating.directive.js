@@ -4,6 +4,7 @@ angular.module('webflixApp')
 function ratings() {
   function controller(storage) {
     this.rateMovie = rateMovie;
+    this.removeRating = removeRating;
     
     /**
      * Rate a given movie with a given rating.
@@ -14,6 +15,16 @@ function ratings() {
     function rateMovie(movie, rating) {
       movie.webflixRating = rating;
       storage.set(movie.id, rating);
+    }
+
+    /**
+     * Remove a rating.
+     * 
+     * @param movie
+     */
+    function removeRating(movie) {
+      movie.webflixRating = 0;
+      storage.forget(movie.id);
     }
   }
   

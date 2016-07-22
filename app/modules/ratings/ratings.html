@@ -19,4 +19,6 @@
            ng-click="ratings.rateMovie(ratings.movie, 5)"
            ng-class="{'fa-star': ratings.movie.webflixRating == 5, 'fa-star-o': ratings.movie.webflixRating < 5}"></i>
     </li>
+    <li><i class="fa fa-times"
+           ng-click="ratings.removeRating(ratings.movie)"></i></li>
 </ul>
