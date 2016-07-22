@@ -59,3 +59,8 @@
 .movie-tile.active {
     background-color: #EBFFBC;
 }
+
+.ratings li {
+    margin-top: 10px;
+    display: inline-block;
+}

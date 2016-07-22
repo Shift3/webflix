@@ -6,7 +6,9 @@
     .directive('movieTile', movieTile);
 
   function movieTile() {
-    function controller() {}
+    function controller() {
+      
+    }
     
     return {
       restrict: 'E',
@@ -19,7 +21,6 @@
       },
       templateUrl: 'build/partials/movie/movie-tile.html'
     };
-  }
-
+  };
 }());
 
