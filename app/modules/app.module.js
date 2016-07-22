@@ -7,7 +7,10 @@
   ])
     .config(config);
 
-  function config($stateProvider, $urlRouterProvider, $httpProvider) {
+  function config($stateProvider, $urlRouterProvider, $httpProvider, storageProvider) {
+    
+    storageProvider.setPrefix('webflixApp');
+    
     /**
      * Default state
      */

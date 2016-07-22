@@ -2,7 +2,7 @@ angular.module('webflixApp')
   .directive('ratings', ratings);
 
 function ratings() {
-  function controller($window) {
+  function controller(storage) {
     this.rateMovie = rateMovie;
     
     /**
@@ -13,7 +13,7 @@ function ratings() {
      */
     function rateMovie(movie, rating) {
       movie.webflixRating = rating;
-      $window.localStorage.setItem(movie.id, rating);
+      storage.set(movie.id, rating);
     }
   }
   
