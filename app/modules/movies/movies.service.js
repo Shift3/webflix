@@ -27,6 +27,7 @@
 
     function makeMovies(data) {
       _.forEach(data, function (l) {
+        if (/Wife/.test(l.title)) return; //naughty movie poster the api is returning
         vm.movies.push(new Movie(l));
       });
       return vm.movies;
