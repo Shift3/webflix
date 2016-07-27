@@ -22,7 +22,8 @@ gulp.task('js-deps', function () {
     './bower_components/moment/moment.js',
     './bower_components/angular/angular.js',
     './bower_components/angular-ui-router/release/angular-ui-router.js',
-    './bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
+    './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+    './bower_components/rangeslider.js/dist/rangeslider.min.js'
   ])
     .pipe(concat('deps.js'))
     .pipe(ngAnnotate())
@@ -43,7 +44,8 @@ gulp.task('partials', function () {
 gulp.task('css-deps', function () {
   gulp.src([
     "./bower_components/bootstrap/dist/css/bootstrap.min.css",
-    "./bower_components/font-awesome/css/font-awesome.min.css"
+    "./bower_components/font-awesome/css/font-awesome.min.css",
+    "./bower_components/rangeslider.js/dist/rangeslider.css"
   ])
     .pipe(concat('css-deps.css'))
     .pipe(gulp.dest('./build/css'));
