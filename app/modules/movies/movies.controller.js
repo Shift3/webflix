@@ -5,15 +5,21 @@
   angular.module('webflixApp')
     .controller('MoviesController', MoviesController);
 
-  function MoviesController(allMovies, $rootScope) {
+  function MoviesController(allMovies, $rootScope, storage) {
     var vm = this;
 
-    vm.filterRating = 0;
+    vm.filterRating = storage.get('filterRating') || 0;
     vm.movies = allMovies;
     vm.selectedMovie = allMovies[0];
     vm.selectMovie = selectMovie;
     vm.filterByRating = filterByRating;
 
+    $rootScope.$watch(function () {
+      return vm.filterRating; 
+    }, function (newFilterRating, oldFilterRating) {
+      storage.set('filterRating', newFilterRating);
+    });
+    
     /**
      * Filter a movie by the currently selected rating.
      *
