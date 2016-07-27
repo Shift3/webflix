@@ -34,6 +34,17 @@
           }
         }
       });
+      // .state('search', {
+      //   url: '/search/:keyword',
+      //   templateUrl: 'build/partials/movies/search.html',
+      //   controller: 'SearchController',
+      //   controllerAs: 'search',
+      //   resolve: {
+      //     searchResults: function (MoviesService, $stateParams) {
+      //       return MoviesService.search($stateParams.keyword);
+      //     }
+      //   }
+      // });
   }
 
 }());

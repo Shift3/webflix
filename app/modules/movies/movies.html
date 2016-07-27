@@ -13,7 +13,17 @@
 </section>
 <section class="rnd-corners-med"
          id="Narrative_Content">
-    <movie-tile ng-repeat="movie in moviesCtl.movies"
+
+    <!-- Range slider for filtering movies -->
+    <input type="range"
+           min="0"
+           max="5"
+           step="1"
+           name="filterRating"
+           ng-model="moviesCtl.filterRating"
+           id="filterRating">
+
+    <movie-tile ng-repeat="movie in moviesCtl.movies | filter: moviesCtl.filterByRating"
                 data-movie="movie"
                 data-selected-movie="moviesCtl.selectedMovie"
                 ng-click="moviesCtl.selectMovie(movie)"></movie-tile>
