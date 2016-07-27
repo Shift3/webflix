@@ -15,16 +15,6 @@
     vm.filterByRating = filterByRating;
 
     /**
-     * Watch the filter rating and store the 
-     * new value for the filter rating in storage.
-     */
-    $rootScope.$watch(function () {
-      return vm.filterRating; 
-    }, function (newFilterRating) {
-      storage.set('filterRating', newFilterRating);
-    });
-    
-    /**
      * Filter a movie by the currently selected rating.
      *
      * @param movie

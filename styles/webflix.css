@@ -68,3 +68,7 @@
 .rangeslider {
     margin-bottom: 20px;
 }
+
+.rangeslider__fill {
+    background: #EBFFBC;
+}

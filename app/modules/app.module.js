@@ -33,6 +33,17 @@
             return MoviesService.getMovies();
           }
         }
+      })
+      .state('movies.movie', {
+        url: '/:movieId',
+        templateUrl: 'build/partials/movie/movie.html',
+        controller: 'MovieController',
+        controllerAs: 'movie',
+        resolve: {
+          movie: function (allMovies, $stateParams) {
+            return _.find(allMovies, {id: parseInt($stateParams.movieId, 10)});
+          }
+        }
       });
       // .state('search', {
       //   url: '/search/:keyword',

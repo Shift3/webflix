@@ -1,32 +1,38 @@
-<h1>Webflix</h1>
-<p>The K Mart Netflix.</p>
+<div ui-view>
+    <h1>Webflix</h1>
+    <p>The K Mart Netflix.</p>
 
-<section class="rnd-corners-med"
-         id="Media_Content">
-    <div>
-        <p>{{ moviesCtl.selectedMovie.shortDesc() }}</p>
-        <p>Release Date: {{moviesCtl.selectedMovie.release_date | niceDate}}</p>
-        <img data-ng-src="{{ moviesCtl.selectedMovie.posterUrl() }}"
-             alt="Movie Poster">
-        <ratings data-movie="moviesCtl.selectedMovie" style="font-size: 3em;"></ratings>
-    </div>
-</section>
-<section class="rnd-corners-med"
-         id="Narrative_Content">
+    <section class="rnd-corners-med"
+             id="Media_Content">
+        <div>
+            <p>{{ moviesCtl.selectedMovie.shortDesc() }}</p>
+            <p>Release Date: {{moviesCtl.selectedMovie.release_date | niceDate}}</p>
+            <img data-ng-src="{{ moviesCtl.selectedMovie.posterUrl() }}"
+                 alt="Movie Poster">
+            <ratings data-movie="moviesCtl.selectedMovie" style="font-size: 3em;"></ratings>
+        </div>
 
-    <!-- Range slider for filtering movies -->
-    <input type="range"
-           slider
-           min="0"
-           max="5"
-           step="1"
-           name="filterRating"
-           ng-model="moviesCtl.filterRating"
-           id="filterRating">
+        <a ui-sref="movies.movie({movieId: moviesCtl.selectedMovie.id})">
+            Read More
+        </a>
+    </section>
+    <section class="rnd-corners-med"
+             id="Narrative_Content">
 
-    <movie-tile ng-repeat="movie in moviesCtl.movies | filter: moviesCtl.filterByRating"
-                data-movie="movie"
-                data-selected-movie="moviesCtl.selectedMovie"
-                ng-click="moviesCtl.selectMovie(movie)"></movie-tile>
-</section>
-<div class="clearFix"></div>
+        <!-- Range slider for filtering movies -->
+        <input type="range"
+               slider
+               min="0"
+               max="5"
+               step="1"
+               name="filterRating"
+               ng-model="moviesCtl.filterRating"
+               id="filterRating">
+
+        <movie-tile ng-repeat="movie in moviesCtl.movies | filter: moviesCtl.filterByRating"
+                    data-movie="movie"
+                    data-selected-movie="moviesCtl.selectedMovie"
+                    ng-click="moviesCtl.selectMovie(movie)"></movie-tile>
+    </section>
+    <div class="clearFix"></div>
+</div>
