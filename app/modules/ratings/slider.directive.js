@@ -14,7 +14,7 @@ function slider(storage) {
   }
 
   return {
-    restrict: 'E',
+    restrict: 'A',
     link: link
   };
 }
