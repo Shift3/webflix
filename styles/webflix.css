@@ -1,12 +1,4 @@
-﻿body, * {
-     font-family: Arial;
-     margin: 0;
-     padding: 0;
-     font-size: 100%;
-     list-style-type: none;
-}
-
-/* ID Styles */
+﻿/* ID Styles */
 #App_Wrapper{
     width: 1024px;
     position: relative;
