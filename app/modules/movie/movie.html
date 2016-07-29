@@ -28,8 +28,16 @@
     </div>
     <div class="col-md-4">
         <form class="form"
-              ng-submit="movie.addComment(movie.comment)"
+              ng-submit="movie.addComment(movie.comment, movie.commentEmail)"
               name="commentForm">
+            <input type="text"
+                   name="email"
+                   class="form-control"
+                   required
+                   ng-pattern="movie.emailPattern"
+                   placeholder="Enter email address"
+                   ng-model="movie.commentEmail"
+                   id="email">
             <textarea name="commentBody"
                       required
                       ng-model="movie.comment"

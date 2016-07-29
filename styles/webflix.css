@@ -76,3 +76,10 @@ ul.comments {
     margin: 25px 0 0 0;
     padding: 0;
 }
+
+ul.comments li {
+    background-color: #C6E2F4;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}

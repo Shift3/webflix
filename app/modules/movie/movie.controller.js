@@ -5,7 +5,8 @@ function MovieCtrl(movie) {
   var vm = this;
   vm.movie = movie; 
   vm.addComment = addComment;
-
+  vm.emailPattern = /[a-z]+@[a-z]+\.(com|edu|net|io)/;
+  
   /**
    * Add a comment to a movie.
    * 
