@@ -82,6 +82,15 @@ ul.comments li {
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 4px;
+    position: relative;
+}
+
+ul.comments li .removeComment {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 2em;
 }
 
 .author {

@@ -53,7 +53,11 @@
         <ul class="comments">
             <li ng-repeat="comment in movie.movie.comments track by $index">
                 {{comment.comment}}
+
                 <div class="author">Posted By: {{comment.email}}</div>
+
+                <i ng-click="movie.trashComment(comment)"
+                   class="fa fa-trash-o removeComment"></i>
             </li>
             <li ng-if="!movie.movie.comments.length">Be the first to comment!</li>
         </ul>
