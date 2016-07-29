@@ -51,7 +51,10 @@
         </form>
 
         <ul class="comments">
-            <li ng-repeat="comment in movie.movie.comments">{{comment}}</li>
+            <li ng-repeat="comment in movie.movie.comments track by $index">
+                {{comment.comment}}
+                <div class="author">Posted By: {{comment.email}}</div>
+            </li>
             <li ng-if="!movie.movie.comments.length">Be the first to comment!</li>
         </ul>
 

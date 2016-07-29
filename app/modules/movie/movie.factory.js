@@ -12,10 +12,10 @@
           overview: '',
           poster_path: '',
           vote_average: '',
-          checkedIn: true,
-          comments: []
+          checkedIn: true
         }, data || {});
-        
+      
+        this.comments = storage.get(this.id + '.comment') || [];
         this.webflixRating = storage.get(this.id);
       }
 
