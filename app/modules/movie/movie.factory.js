@@ -13,6 +13,7 @@
           poster_path: '',
           vote_average: '',
           checkedIn: true,
+          comments: []
         }, data || {});
         
         this.webflixRating = storage.get(this.id);

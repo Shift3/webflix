@@ -64,3 +64,15 @@
 .rangeslider__fill {
     background: #EBFFBC;
 }
+
+textarea.commentBody {
+    height: 10em;
+    margin-bottom: 15px;
+}
+
+ul.comments {
+    font-size: 1.2em;
+    list-style-type: none;
+    margin: 25px 0 0 0;
+    padding: 0;
+}

@@ -4,7 +4,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-8">
         <table class="table table-striped">
             <tr ng-repeat="(key, value) in movie.movie">
                 <th>{{key}}</th>
@@ -26,5 +26,26 @@
             </tr>
         </table>
     </div>
-    <div class="col-md-5"></div>
+    <div class="col-md-4">
+        <form class="form"
+              ng-submit="movie.addComment(movie.comment)"
+              name="commentForm">
+            <textarea name="commentBody"
+                      required
+                      ng-model="movie.comment"
+                      placeholder="Leave a comment!"
+                      class="form-control commentBody"></textarea>
+
+            <button class="btn btn-block btn-md btn-primary"
+                    ng-disabled="commentForm.$invalid">
+                Add Comment
+            </button>
+        </form>
+
+        <ul class="comments">
+            <li ng-repeat="comment in movie.movie.comments">{{comment}}</li>
+            <li ng-if="!movie.movie.comments.length">Be the first to comment!</li>
+        </ul>
+
+    </div>
 </div>
