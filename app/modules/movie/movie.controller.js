@@ -1,7 +1,7 @@
 angular.module('webflixApp')
   .controller('MovieController', MovieCtrl);
 
-function MovieCtrl(movie, storage, $uibModal) {
+function MovieCtrl(movie, storage, webflixModal) {
   var vm = this;
   vm.movie = movie;
   vm.addComment = addComment;
@@ -12,13 +12,9 @@ function MovieCtrl(movie, storage, $uibModal) {
    * Opens a modal for commenting.
    */
   function openCommentModal() {
-    $uibModal.open({
-      controller: 'CommentModalCtrl',
-      controllerAs: 'commentModal',
-      templateUrl: 'build/partials/movie/comment-modal.html',
-      size: 'md'
-    })
-      .result.then(addComment);
+    webflixModal
+      .open('CommentModalCtrl', 'commentModal', 'build/partials/movie/comment-modal.html')
+      .then(addComment);
   }
 
   /**
