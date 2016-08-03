@@ -1,33 +1,40 @@
 angular.module('webflixApp')
   .controller('MovieController', MovieCtrl);
 
-function MovieCtrl(movie, storage) {
+function MovieCtrl(movie, storage, $uibModal) {
   var vm = this;
-  vm.movie = movie; 
+  vm.movie = movie;
   vm.addComment = addComment;
   vm.trashComment = trashComment;
-  vm.emailPattern = /[a-z]+@[a-z]+\.(com|edu|net|io)/;
+  vm.openCommentModal = openCommentModal;
+
+  /**
+   * Opens a modal for commenting.
+   */
+  function openCommentModal() {
+    $uibModal.open({
+      controller: 'CommentModalCtrl',
+      controllerAs: 'commentModal',
+      templateUrl: 'build/partials/movie/comment-modal.html',
+      size: 'md'
+    })
+      .result.then(addComment);
+  }
 
   /**
    * Add a comment to a movie.
    *
-   * @param comment
-   * @param email
+   * @param commentData
    */
-  function addComment(comment, email) {
-    vm.movie.comments.push({
-      comment: comment, 
-      email: email
-    });  
-   
+  function addComment(commentData) {
+    vm.movie.comments.push(commentData);
     storage.set(vm.movie.id + '.comment', vm.movie.comments);
-    
-    vm.comment = ''; 
+    vm.comment = '';
   }
 
   /**
    * Remove a comment.
-   * 
+   *
    * @param comment
    */
   function trashComment(comment) {

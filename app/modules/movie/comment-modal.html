@@ -1,0 +1,29 @@
+<div class="modal-header">
+    <h3 class="modal-title">Add a comment</h3>
+</div>
+<div class="modal-body">
+    <input type="text"
+           name="email"
+           class="form-control"
+           required
+           ng-pattern="movie.emailPattern"
+           placeholder="Enter email address"
+           ng-model="commentModal.data.email"
+           id="email">
+
+    <textarea name="commentBody"
+              required
+              ng-model="commentModal.data.comment"
+              placeholder="Leave a comment!"
+              class="form-control commentBody"></textarea>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary"
+            ng-click="commentModal.close()"
+            type="button">OK
+    </button>
+    <button class="btn btn-warning"
+            ng-click="commentModal.dismiss()"
+            type="button">Cancel
+    </button>
+</div>

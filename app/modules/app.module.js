@@ -3,6 +3,7 @@
 
   angular.module('webflixApp', [
     'ui.router', 
+    'ui.bootstrap',
     'webflixApp.filters'
   ])
     .config(config);

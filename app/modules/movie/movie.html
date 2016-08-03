@@ -27,28 +27,33 @@
         </table>
     </div>
     <div class="col-md-4">
-        <form class="form"
-              ng-submit="movie.addComment(movie.comment, movie.commentEmail)"
-              name="commentForm">
-            <input type="text"
-                   name="email"
-                   class="form-control"
-                   required
-                   ng-pattern="movie.emailPattern"
-                   placeholder="Enter email address"
-                   ng-model="movie.commentEmail"
-                   id="email">
-            <textarea name="commentBody"
-                      required
-                      ng-model="movie.comment"
-                      placeholder="Leave a comment!"
-                      class="form-control commentBody"></textarea>
+        <button ng-click="movie.openCommentModal()"
+                class="btn btn-primary btn-block btn-lg">
+            Add a comment
+        </button>
 
-            <button class="btn btn-block btn-md btn-primary"
-                    ng-disabled="commentForm.$invalid">
-                Add Comment
-            </button>
-        </form>
+        <!--<form class="form"-->
+        <!--ng-submit="movie.addComment(movie.comment, movie.commentEmail)"-->
+        <!--name="commentForm">-->
+        <!--<input type="text"-->
+        <!--name="email"-->
+        <!--class="form-control"-->
+        <!--required-->
+        <!--ng-pattern="movie.emailPattern"-->
+        <!--placeholder="Enter email address"-->
+        <!--ng-model="movie.commentEmail"-->
+        <!--id="email">-->
+        <!--<textarea name="commentBody"-->
+        <!--required-->
+        <!--ng-model="movie.comment"-->
+        <!--placeholder="Leave a comment!"-->
+        <!--class="form-control commentBody"></textarea>-->
+
+        <!--<button class="btn btn-block btn-md btn-primary"-->
+        <!--ng-disabled="commentForm.$invalid">-->
+        <!--Add Comment-->
+        <!--</button>-->
+        <!--</form>-->
 
         <ul class="comments">
             <li ng-repeat="comment in movie.movie.comments track by $index">
