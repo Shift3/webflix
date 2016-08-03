@@ -16,6 +16,11 @@
     "jshint": "^2.9.2"
   },
   "devDependencies": {
-    "gulp-angular-htmlify": "^2.3.0"
+    "angular-mocks": "^1.5.8",
+    "gulp-angular-htmlify": "^2.3.0",
+    "jasmine": "^2.4.1",
+    "karma": "^1.1.2",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2"
   }
 }
