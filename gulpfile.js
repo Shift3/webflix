@@ -5,6 +5,7 @@
   uglify = require('gulp-uglify'),
   htmlify = require('gulp-angular-htmlify'),
   jshint = require('gulp-jshint'),
+  templateCache = require('gulp-angular-templatecache'),
   iife = require('gulp-iife'),
   sourcemaps = require('gulp-sourcemaps'),
   concat = require('gulp-concat'),
@@ -37,7 +38,10 @@ gulp.task('partials', function () {
     .pipe(htmlify({
       customPrefixes: ['ui-']
     }))
-    .pipe(gulp.dest('./build/partials'))
+    .pipe(templateCache({
+      standalone: true
+    }))
+    .pipe(gulp.dest('./build/js'))
     .pipe(livereload());
 });
 

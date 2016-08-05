@@ -4,7 +4,8 @@
   angular.module('webflixApp', [
     'ui.router', 
     'ui.bootstrap',
-    'webflixApp.filters'
+    'webflixApp.filters',
+    'templates'
   ])
     .config(config);
 
@@ -26,7 +27,7 @@
     $stateProvider
       .state('movies', {
         url: '/movies',
-        templateUrl: 'build/partials/movies/movies.html',
+        templateUrl: 'movies/movies.html',
         controller: 'MoviesController',
         controllerAs: 'moviesCtl',
         resolve: {
@@ -37,7 +38,7 @@
       })
       .state('movies.movie', {
         url: '/:movieId',
-        templateUrl: 'build/partials/movie/movie.html',
+        templateUrl: 'movie/movie.html',
         controller: 'MovieController',
         controllerAs: 'movie',
         resolve: {

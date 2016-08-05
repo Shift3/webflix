@@ -19,7 +19,7 @@
         movie: '=',
         selectedMovie: '='
       },
-      templateUrl: 'build/partials/movie/movie-tile.html'
+      templateUrl: 'movie/movie-tile.html'
     };
   }
 }());
